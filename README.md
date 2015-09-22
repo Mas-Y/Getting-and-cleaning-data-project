@@ -28,5 +28,5 @@ You should create one R script called run_analysis.R that does the following:
 **CodeBook.md:** information about raw and tidy data set and elaboration made to transform them  
 **README.md:** this file  
 **run_analysis.R:** R script to transform raw data set into tidy one  
-**tidy.txt:** independent tidy data set with the average of each variable for each activity and each subject. 
+**tidydata.txt:** independent tidy data set with the average of each variable for each activity and each subject. 
 
