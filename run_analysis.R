@@ -26,18 +26,19 @@ dataFeaturesTest  <- read.table(file.path(path_rf, "test" , "X_test.txt" ),heade
 dataFeaturesTrain <- read.table(file.path(path_rf, "train", "X_train.txt"),header = FALSE)
 
 ##Merges the training and the test sets to create one data set
+###Concatenate the data tables by rows
 dataSubject <- rbind(dataSubjectTrain, dataSubjectTest)
 dataActivity<- rbind(dataActivityTrain, dataActivityTest)
 dataFeatures<- rbind(dataFeaturesTrain, dataFeaturesTest)
 
-##Set names to variables
+###Set names to variables
 
 names(dataSubject)<-c("subject")
 names(dataActivity)<- c("activity")
 dataFeaturesNames <- read.table(file.path(path_rf, "features.txt"),head=FALSE)
 names(dataFeatures)<- dataFeaturesNames$V2
 
-##Merge columns to get the data frame Data for all data
+###Merge columns to get the data frame Data for all data
 
 dataCombine <- cbind(dataSubject, dataActivity)
 Data <- cbind(dataFeatures, dataCombine)
@@ -70,19 +71,25 @@ Data$activity[Data$activity == 5] <- "Standing"
 Data$activity[Data$activity == 6] <- "Laying"
 Data$activity <- as.factor(Data$activity)
 
+### check top 30 rows of data
 head(Data$activity,30)
 
 ##Appropriately labels the data set with descriptive variable names
+###In the former part, variables activity ,subject and names of the activities have been labelled using descriptive names.In this part, Names of Features will be labelled using descriptive variable names.
+
 names(Data)<-gsub("^t", "time", names(Data))
 names(Data)<-gsub("^f", "frequency", names(Data))
 names(Data)<-gsub("Acc", "Accelerometer", names(Data))
 names(Data)<-gsub("Gyro", "Gyroscope", names(Data))
 names(Data)<-gsub("Mag", "Magnitude", names(Data))
 names(Data)<-gsub("BodyBody", "Body", names(Data))
+
+### check how the names are changed
 names(Data)
 
 
-#Creates a second,independent tidy data set and ouput it
+##Creates a second,independent tidy data set and ouput 
+##with the average of each variable for each activity and each subject based on the cleaned data set data set 
 
 library(plyr);
 Data2<-aggregate(. ~subject + activity, Data, mean)
