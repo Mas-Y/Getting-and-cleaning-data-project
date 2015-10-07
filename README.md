@@ -30,3 +30,4 @@ You should create one R script called run_analysis.R that does the following:
 **run_analysis.R:** R script to transform raw data set into tidy one  
 **tidydata.txt:** independent tidy data set with the average of each variable for each activity and each subject. 
 
+
