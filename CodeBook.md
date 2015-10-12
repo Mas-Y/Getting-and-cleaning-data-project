@@ -18,23 +18,23 @@ The signals were sampled in fixed-width sliding windows of 2.56 sec and 50% over
 
 The set of variables that were estimated from these signals are:  
 
-mean(): Mean value  
-std(): Standard deviation  
-mad(): Median absolute deviation  
-max(): Largest value in array  
-min(): Smallest value in array  
-sma(): Signal magnitude area  
-energy(): Energy measure. Sum of the squares divided by the number of values.  
-iqr(): Interquartile range  
-entropy(): Signal entropy  
-arCoeff(): Autoregression coefficients with Burg order equal to 4  
-correlation(): Correlation coefficient between two signals  
-maxInds(): Index of the frequency component with largest magnitude  
-meanFreq(): Weighted average of the frequency components to obtain a mean frequency  
-skewness(): Skewness of the frequency domain signal  
-kurtosis(): Kurtosis of the frequency domain signal  
-bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.  
-angle(): Angle between some vectors.  
+* mean(): Mean value  
+* std(): Standard deviation  
+* mad(): Median absolute deviation  
+* max(): Largest value in array  
+* min(): Smallest value in array  
+* sma(): Signal magnitude area  
+* energy(): Energy measure. Sum of the squares divided by the number of values.  
+* iqr(): Interquartile range  
+* entropy(): Signal entropy  
+* arCoeff(): Autoregression coefficients with Burg order equal to 4  
+* correlation(): Correlation coefficient between two signals  
+* maxInds(): Index of the frequency component with largest magnitude  
+* meanFreq(): Weighted average of the frequency components to obtain a mean frequency  
+* skewness(): Skewness of the frequency domain signal  
+* kurtosis(): Kurtosis of the frequency domain signal  
+* bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.  
+* angle(): Angle between some vectors.  
 
 No unit of measures is reported as all features were normalized and bounded within [-1,1].  
 
@@ -61,12 +61,12 @@ From the merged data set a subset is extracted with only the values of estimated
 
 Descriptive activity names are read from “activity_labels.txt” and variable *activity* is factorised in the data frame *Data* using descriptive activity names
 An activity label (Activity) are named as follows: 
-1 WALKING  
-2 WALKING_UPSTAIRS  
-3 WALKING_DOWNSTAIRS  
-4 SITTING  
-5 STANDING  
-6 LAYING  
+* 1 == WALKING  
+* 2 == WALKING_UPSTAIRS  
+* 3 == WALKING_DOWNSTAIRS  
+* 4 == SITTING  
+* 5 == STANDING  
+* 6 == LAYING  
 
 
 
@@ -101,5 +101,6 @@ Body Acceleration Jerk Magnitude    |TimeDomain.BodyAccelerationJerkMagnitude| F
 Body Angular Speed Magnitude        | TimeDomain.BodyAngularSpeedMagnitude   | FrequencyDomain.BodyAngularSpeedMagnitude
 Body Angular Acceleration Magnitude|TimeDomain.BodyAngularAccelerationMagnitude|FrequencyDomain.BodyAngularAccelerationMagnitude
 
-For variables derived from mean and standard deviation estimation, the previous labels are augmented with the terms "Mean" or "StandardDeviation".
+For variables derived from mean and standard deviation estimation, the previous labels are augmented with the terms "Mean" or "StandardDeviation".  
+
 The data set is written to the file **tidy.txt**.
