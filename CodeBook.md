@@ -103,4 +103,4 @@ Body Angular Acceleration Magnitude|TimeDomain.BodyAngularAccelerationMagnitude|
 
 For variables derived from mean and standard deviation estimation, the previous labels are augmented with the terms "Mean" or "StandardDeviation".  
 
-The data set is written to the file **tidy.txt**.
+The data set is written to the file **tidydata.txt**.
