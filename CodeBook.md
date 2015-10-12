@@ -101,5 +101,5 @@ Body Acceleration Jerk Magnitude    |TimeDomain.BodyAccelerationJerkMagnitude| F
 Body Angular Speed Magnitude        | TimeDomain.BodyAngularSpeedMagnitude   | FrequencyDomain.BodyAngularSpeedMagnitude
 Body Angular Acceleration Magnitude|TimeDomain.BodyAngularAccelerationMagnitude|FrequencyDomain.BodyAngularAccelerationMagnitude
 
-For variables derived from mean and standard deviation estimation, the previous labels
+For variables derived from mean and standard deviation estimation, the previous labels are augmented with the terms "Mean" or "StandardDeviation".
 The data set is written to the file **tidy.txt**.
