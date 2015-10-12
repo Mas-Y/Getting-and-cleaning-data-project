@@ -73,22 +73,22 @@ An activity label (Activity) are named as follows:
 **Label variables appropriately** 
 
 Labels given from the original collectors were changed: to obtain valid R names without parentheses, dashes and commas to obtain more descriptive labels. Here is a list of features that are replaced with appropriate Labels.  
-^t-time  
-^f-frequency  
-Acc-Accelerator  
-Gyro-Gyroscope  
-Mag-Magnitude  
-BodyBody-Body
++ ^t-time  
++ ^f-frequency  
++ Acc-Accelerator  
++ Gyro-Gyroscope  
++ Mag-Magnitude  
++ BodyBody-Body
 
 
 **Create a tidy data set**
 
 An independent tidy data set will be created with the average of each variable for each activity and each subject based on the subset data set created in the above steps.  
 
-The following table relates the 17 signals to the names used as prefix for the variables names present in the data set. ".XYZ" denotes three variables, one for each axis.
-Name	|Time domain|	Frequency domain
-------|-----------|------------------
-Body Acceleration	|TimeDomain.BodyAcceleration.XYZ|	FrequencyDomain.BodyAcceleration.XYZ
+The following table relates the 17 signals to the names used as prefix for the variables names present in the data set. ".XYZ" denotes three variables, one for each axis.  
+Name	|Time domain|	Frequency domain  
+------|-----------|------------------  
+Body Acceleration	|TimeDomain.BodyAcceleration.XYZ|	FrequencyDomain.BodyAcceleration.XYZ  
 Gravity Acceleration	TimeDomain.GravityAcceleration.XYZ	
 Body Acceleration Jerk	TimeDomain.BodyAccelerationJerk.XYZ	FrequencyDomain.BodyAccelerationJerk.XYZ
 Body Angular Speed	TimeDomain.BodyAngularSpeed.XYZ	FrequencyDomain.BodyAngularSpeed.XYZ
