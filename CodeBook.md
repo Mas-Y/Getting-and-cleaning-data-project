@@ -43,7 +43,13 @@ The raw data sets are processed with run_analisys.R script to create a tidy data
 
 **Merge training and test sets**    
 
-Test and training data (X_train.txt, X_test.txt), subject ids (subject_train.txt, subject_test.txt) and activity ids (y_train.txt, y_test.txt) are merged to obtain a single data set. Variables are labelled with the names assigned by original collectors (features.txt).  
+* Values of Varible Activity consist of data from “Y_train.txt” and “Y_test.txt”
+* values of Varible Subject consist of data from “subject_train.txt” and subject_test.txt"
+* Values of Varibles Features consist of data from “X_train.txt” and “X_test.txt”
+* Names of Varibles Features come from “features.txt”
+* levels of Varible Activity come from “activity_labels.txt”
+
+Activity, Subject and Features are merged by rows. Variables are labelled with the names assigned by original collectors (features.txt).Columns are merged to get the data frame Data for all data as a single data set.  
 
 
 **Extract mean and standard deviation variables**  
