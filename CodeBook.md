@@ -49,29 +49,54 @@ The raw data sets are processed with run_analisys.R script to create a tidy data
 * Names of Varibles Features come from “features.txt”
 * levels of Varible Activity come from “activity_labels.txt”
 
-Activity, Subject and Features are merged by rows. Variables are labelled with the names assigned by original collectors (features.txt).Columns are merged to get the data frame Data for all data as a single data set.  
+Activity, Subject and Features are merged by rows. Variables are labelled with the names assigned by original collectors (features.txt).Columns are merged to get the data frame Data as a single data set.  
 
 
 **Extract mean and standard deviation variables**  
 
-From the merged data set is extracted and intermediate data set with only the values of estimated mean (variables with labels that contain "mean") and standard deviation (variables with labels that contain "std").  
+From the merged data set a subset is extracted with only the values of estimated mean (variables with labels that contain "mean") and standard deviation (variables with labels that contain "std") from the features.  
 
 
 **Use descriptive activity names**  
 
-A new column is added to intermediate data set with the activity description. Activity id column is used to look up descriptions in activity_labels.txt.  
+Descriptive activity names are read from “activity_labels.txt” and variable *activity* is factorised in the data frame *Data* using descriptive activity names
+An activity label (Activity) are named as follows: 
+1 WALKING  
+2 WALKING_UPSTAIRS  
+3 WALKING_DOWNSTAIRS  
+4 SITTING  
+5 STANDING  
+6 LAYING  
 
 
 
-**Label variables appropriately**  
+**Label variables appropriately** 
 
-Labels given from the original collectors were changed: to obtain valid R names without parentheses, dashes and commas to obtain more descriptive labels  
+Labels given from the original collectors were changed: to obtain valid R names without parentheses, dashes and commas to obtain more descriptive labels. Here is a list of features that are replaced with appropriate Labels.  
+^t-time  
+^f-frequency  
+Acc-Accelerator  
+Gyro-Gyroscope  
+Mag-Magnitude  
+BodyBody-Body
 
 
 **Create a tidy data set**
 
-From the intermediate data set is created a final tidy data set where numeric variables are averaged for each activity and each subject.  
-An activity label (Activity): WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING  
+An independent tidy data set will be created with the average of each variable for each activity and each subject based on the subset data set created in the above steps.  
 
+The following table relates the 17 signals to the names used as prefix for the variables names present in the data set. ".XYZ" denotes three variables, one for each axis.
+Name	|Time domain|	Frequency domain
+------|-----------|------------------
+Body Acceleration	|TimeDomain.BodyAcceleration.XYZ|	FrequencyDomain.BodyAcceleration.XYZ
+Gravity Acceleration	TimeDomain.GravityAcceleration.XYZ	
+Body Acceleration Jerk	TimeDomain.BodyAccelerationJerk.XYZ	FrequencyDomain.BodyAccelerationJerk.XYZ
+Body Angular Speed	TimeDomain.BodyAngularSpeed.XYZ	FrequencyDomain.BodyAngularSpeed.XYZ
+Body Angular Acceleration	TimeDomain.BodyAngularAcceleration.XYZ	
+Body Acceleration Magnitude	TimeDomain.BodyAccelerationMagnitude	FrequencyDomain.BodyAccelerationMagnitude
+Gravity Acceleration Magnitude	TimeDomain.GravityAccelerationMagnitude	
+Body Acceleration Jerk Magnitude	TimeDomain.BodyAccelerationJerkMagnitude	FrequencyDomain.BodyAccelerationJerkMagnitude
+Body Angular Speed Magnitude	TimeDomain.BodyAngularSpeedMagnitude	FrequencyDomain.BodyAngularSpeedMagnitude
+Body Angular Acceleration Magnitude	TimeDomain.BodyAngularAccelerationMagnitude	FrequencyDomain.BodyAngularAccelerationMagnitude
 For variables derived from mean and standard deviation estimation, the previous labels are augmented with the terms "Mean" or "StandardDeviation".
 The data set is written to the file **tidy.txt**.
